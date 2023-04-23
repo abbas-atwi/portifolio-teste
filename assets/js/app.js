@@ -11,3 +11,10 @@ function activeHover() {
 items.forEach((item) => {
   item.addEventListener("click", activeHover);
 });
+
+const menu = document.querySelector(".menubuerguer");
+const menuNav = document.querySelector(".menu nav");
+
+menu.addEventListener("click", () => {
+  menuNav.classList.toggle("activeMenu");
+});

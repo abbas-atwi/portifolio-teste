@@ -31,8 +31,27 @@ body {
 .menu {
   flex: 1;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
 }
+
+.menubuerguer {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+  justify-content: space-around;
+  background-color: #ccc;
+}
+.menubuerguer .line {
+  width: 100%;
+  height: 6px;
+  background-color: #1b1d1f;
+}
+
 .menu ul {
   display: flex;
 }
@@ -118,22 +137,36 @@ body {
   justify-content: center;
 }
 
+@keyframes shows {
+  from {
+    opacity: 0;
+    border: 0;
+    transform: translate3d(-10px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    border-left: 30px solid #ccc;
+  }
+}
+
 .item {
   padding-top: 15px;
   padding-bottom: 15px;
   width: 300px;
   height: 350px;
-
+  animation: shows 0.2s forwards;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-left: 5px solid #87e77c;
+  border-top-right-radius: 10px;
   background-color: #0d1012;
   color: #fff;
 }
 
 .item h2 {
+  display: inline-block;
   padding: 10px 30px;
   border-radius: 5px;
   border-left: 3px solid purple;
@@ -191,10 +224,19 @@ body {
   border: 2px solid #222;
   box-shadow: 1px 1px 6px #ccc;
 }
-@media (max-width: 450px) {
-  .logo {
-    background-color: red;
+
+@keyframes menu {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0, -30px);
   }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 450px) {
   .section-slidearea {
     padding: 10px;
   }
@@ -203,5 +245,35 @@ body {
   }
   .section-slidearea p {
     font-size: 16px;
+  }
+  .header-container {
+    height: 100px;
+  }
+  .menu nav {
+    display: none;
+    animation: menu 0.6s forwards;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    height: calc(100vh - 100px);
+    width: 95%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .menu ul {
+    flex-direction: column;
+  }
+  .menu ul li a {
+    padding: 30px 0px;
+    height: 30px;
+    font-size: 2rem;
+  }
+  .menubuerguer {
+    display: flex;
+    cursor: pointer;
+  }
+  nav.activeMenu {
+    display: flex;
   }
 }
