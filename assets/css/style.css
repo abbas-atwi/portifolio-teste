@@ -103,8 +103,11 @@ body {
 }
 
 .section-info {
+  border-top: 3px solid #69c95e;
   padding-top: 50px;
   padding-bottom: 50px;
+  background-color: #1b1d1f;
+  color: #fff;
 }
 .section-container-info {
   max-width: 1440px;
@@ -126,7 +129,7 @@ body {
   justify-content: center;
   flex-direction: column;
   border-left: 5px solid #87e77c;
-  background-color: #333;
+  background-color: #0d1012;
   color: #fff;
 }
 .item-area {
