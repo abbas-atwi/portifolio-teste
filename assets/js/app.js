@@ -25,7 +25,7 @@ const sectionInfo = document.querySelector(".section-container-info");
 const sectionItem = document.querySelectorAll(".section-container-info .item");
 window.addEventListener("scroll", () => {
   const windowHeight = window.innerHeight * 0.6;
-  const sectionInfoTop = sectionInfo.getBoundingClientRect().top - windowHeight;
+  const sectionInfoTop = sectionInfo.getBoundingClientRect().top;
   function itemActive() {
     sectionItem.forEach((item) => {
       item.classList.add("active");
