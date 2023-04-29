@@ -56,18 +56,27 @@ menus.forEach((item) => {
 });
 
 const pointer = document.querySelectorAll(".pointers .pointer");
-
-function activePointer() {
+const sliders = document.querySelectorAll(".slide");
+sliders.innerHTML = sliders[0].innerHTML;
+function activePointer(index) {
   pointer.forEach((item) => {
     item.classList.remove("active");
   });
-  this.classList.add("active");
+
+  pointer[index].classList.toggle("active");
+  sliders[0].innerHTML = sliders[index].innerHTML;
 }
 
 pointer.forEach((item, index) => {
-  item.addEventListener("click", activePointer);
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    activePointer(index);
+  });
 });
 
+// sliders
+
+console.log(sliders[1]);
 console.log(pointer);
 
 console.log(menus);
