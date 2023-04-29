@@ -25,17 +25,34 @@ const sectionInfo = document.querySelector(".section-container-info");
 const sectionItem = document.querySelectorAll(".section-container-info .item");
 window.addEventListener("scroll", () => {
   const windowHeight = window.innerHeight * 0.6;
-  const sectionInfoTop = sectionInfo.getBoundingClientRect().top;
+  const sectionInfoTop = sectionInfo.getBoundingClientRect().top - windowHeight;
   function itemActive() {
     sectionItem.forEach((item) => {
       item.classList.add("active");
     });
   }
-
   if (sectionInfoTop < 0) {
     console.log("a");
     itemActive();
-  } else {
   }
 });
-console.log(items);
+
+const menus = document.querySelectorAll(".menu a[href^='#']");
+
+menus.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    const href = item.getAttribute("href");
+    const section = document.querySelector(href);
+
+    const sectiontop = section.getBoundingClientRect().top;
+
+    console.log(section);
+
+    section.scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+console.log(menus);
