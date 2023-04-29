@@ -180,7 +180,6 @@ body {
   width: 300px;
   height: 350px;
   display: flex;
-  animation: animationItems 1s forwards;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -196,6 +195,7 @@ body {
 .item.active {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  animation: animationItems 1s forwards;
 }
 .item h2 {
   display: inline-block;
