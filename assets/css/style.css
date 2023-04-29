@@ -163,27 +163,14 @@ body {
 }
 
 @keyframes animationItems {
-  0% {
-    border-top: 2px solid #69c95e;
-    transition: all 1s ease-in;
+  from {
+    border-left: 3px solid red;
+    transform: scale(0.5);
   }
-  25% {
-    border-top: 2px solid #69c95e;
-    border-left: 2px solid #69c95e;
-    transition: all 1s ease-in;
-  }
-  50% {
-    border-top: 2px solid #69c95e;
-    border-left: 2px solid #69c95e;
-    border-right: 2px solid #69c95e;
-    transition: all 0.3s ease-in;
-  }
-  100% {
-    border-top: 2px solid #69c95e;
-    border-left: 2px solid #69c95e;
-    border-right: 2px solid #69c95e;
-    border-bottom: 2px solid #69c95e;
-    transition: all 0.3s ease-in;
+  to {
+    border-left: 3px solid red;
+    border-top: 3px solid #69c95e;
+    transform: scale(1);
   }
 }
 
@@ -193,7 +180,7 @@ body {
   width: 300px;
   height: 350px;
   display: flex;
-  animation: animationItems 5s forwards;
+  animation: animationItems 1s forwards;
   align-items: center;
   justify-content: center;
   flex-direction: column;
