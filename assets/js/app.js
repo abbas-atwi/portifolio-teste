@@ -55,4 +55,19 @@ menus.forEach((item) => {
   });
 });
 
+const pointer = document.querySelectorAll(".pointers .pointer");
+
+function activePointer() {
+  pointer.forEach((item) => {
+    item.classList.remove("active");
+  });
+  this.classList.add("active");
+}
+
+pointer.forEach((item, index) => {
+  item.addEventListener("click", activePointer);
+});
+
+console.log(pointer);
+
 console.log(menus);
