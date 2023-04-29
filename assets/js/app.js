@@ -57,19 +57,20 @@ menus.forEach((item) => {
 
 const pointer = document.querySelectorAll(".pointers .pointer");
 const sliders = document.querySelectorAll(".slide");
-sliders.innerHTML = sliders[0].innerHTML;
+
 function activePointer(index) {
   pointer.forEach((item) => {
     item.classList.remove("active");
   });
 
   pointer[index].classList.toggle("active");
+
   sliders[0].innerHTML = sliders[index].innerHTML;
 }
 
 pointer.forEach((item, index) => {
   item.addEventListener("click", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     activePointer(index);
   });
 });
