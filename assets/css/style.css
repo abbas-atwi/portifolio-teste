@@ -162,15 +162,12 @@ body {
   }
 }
 
-@keyframes animationItems {
+@keyframes animations {
   from {
-    border-left: 3px solid red;
-    transform: scale(0.5);
+    filter: drop-shadow(4px 4px 5px blue);
   }
   to {
-    border-left: 3px solid red;
-    border-top: 3px solid #69c95e;
-    transform: scale(1);
+    filter: drop-shadow(9px 5px 5px blue);
   }
 }
 
@@ -188,14 +185,15 @@ body {
   color: #fff;
   opacity: 0;
   border: 2px;
-  transform: translate3d(-30px, 0, 0);
+  transform: translate3d(-60px, 0, 0);
   transition: 0.3s;
 }
 
 .item.active {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  animation: animationItems 1s forwards;
+  animation: animations 0.3s forwards;
+  /* animation: animationItems 1s forwards; */
 }
 .item h2 {
   display: inline-block;
