@@ -38,7 +38,7 @@ window.addEventListener("scroll", () => {
 });
 
 const menus = document.querySelectorAll(".menu a[href^='#']");
-
+const metade = window.innerHeight * 0.6;
 menus.forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
@@ -57,6 +57,7 @@ menus.forEach((item) => {
 
 const pointer = document.querySelectorAll(".pointers .pointer");
 const sliders = document.querySelectorAll(".slide");
+const slidersSave = sliders[0];
 
 function activePointer(index) {
   pointer.forEach((item) => {
@@ -64,8 +65,7 @@ function activePointer(index) {
   });
 
   pointer[index].classList.toggle("active");
-
-  sliders[0].innerHTML = sliders[index].innerHTML;
+  slidersSave.innerHTML = sliders[index].innerHTML;
 }
 
 pointer.forEach((item, index) => {

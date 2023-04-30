@@ -292,6 +292,25 @@ body {
   animation: animationPointer 0.3s forwards;
   transition: background-color, all 0.3s ease;
 }
+
+footer {
+  border-top: 2px solid #69c95e;
+  background-color: #1b1d1f;
+  color: #ccc;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer p {
+  font-size: 21px;
+  margin-bottom: 5px;
+}
+footer q {
+  font-size: 13px;
+}
 /* animation items */
 
 @keyframes menu {
