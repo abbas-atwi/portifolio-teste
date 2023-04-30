@@ -164,10 +164,10 @@ body {
 
 @keyframes animations {
   from {
-    filter: drop-shadow(4px 4px 5px blue);
+    filter: drop-shadow(2px 4px 5px #ccc);
   }
   to {
-    filter: drop-shadow(9px 5px 5px blue);
+    filter: drop-shadow(4px 5px 5px #ccc);
   }
 }
 
